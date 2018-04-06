@@ -18,6 +18,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'realm-android'
 
 android {
     compileSdkVersion 26
@@ -50,6 +51,16 @@ android {
     }
 }
 
+repositories {
+    maven {
+        url "https://jitpack.io"
+    }
+}
+
+realm {
+    kotlinExtensionsEnabled = true
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation deps.support.app_compat
@@ -57,8 +68,8 @@ dependencies {
     implementation deps.support.design
     implementation deps.constraint_layout
     implementation deps.timber
-    implementation deps.kotlin.stdlib
     implementation deps.dagger.runtime
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation 'pub.devrel:easypermissions:1.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     kapt deps.dagger.compiler
@@ -67,8 +78,7 @@ dependencies {
     testImplementation deps.mockito.all
     testImplementation deps.hamcrest
     testImplementation deps.arch_core.testing
-    testImplementation deps.kotlin.stdlib
-    testImplementation deps.kotlin.test
+    testImplementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
 
     compile deps.multidex
     compile deps.anko.common
@@ -76,7 +86,8 @@ dependencies {
     compile deps.retrofit.gson_converter
     compile deps.retrofit.rxjava2_adapter
     compile deps.rxjava2
-    compile deps.rxandroid
+    compile deps.rxandroid2
+    compile 'io.realm:android-adapters:2.1.1'
     debugCompile deps.leakcanary.debug_compiler
     releaseCompile deps.leakcanary.release_compiler
 

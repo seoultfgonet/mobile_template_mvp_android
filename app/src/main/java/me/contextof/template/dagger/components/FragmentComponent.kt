@@ -8,10 +8,10 @@ import me.contextof.template.dagger.modules.FragmentModule
 import me.contextof.template.dagger.scopes.PerFragment
 
 @PerFragment
-@Component(dependencies = arrayOf(AppComponent::class), modules = arrayOf(FragmentModule::class))
+@Component(dependencies = [(AppComponent::class)], modules = arrayOf(FragmentModule::class))
 interface FragmentComponent {
 
     fun inject(fragment: BaseFragment)
 
-    fun getFragment(): Fragment
+    fun fragment(): Fragment
 }

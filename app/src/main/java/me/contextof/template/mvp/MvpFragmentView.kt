@@ -14,7 +14,6 @@ import me.contextof.template.dagger.HasComponent
 abstract class MvpFragmentView<V : MvpView, P : BasePresenter<V>> : BaseFragment(), MvpView {
 
     protected var presenter: P? = null
-        private set
 
     @Suppress("UNCHECKED_CAST")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

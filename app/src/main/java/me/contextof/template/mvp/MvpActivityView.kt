@@ -8,7 +8,6 @@ import me.contextof.template.MyApplication
 abstract class MvpActivityView<V : MvpView, P : BasePresenter<V>> : BaseActivity(), MvpView {
 
     protected var presenter: P? = null
-        private set
 
     protected val appComponent: AppComponent
         get() = (application as MyApplication).appComponent

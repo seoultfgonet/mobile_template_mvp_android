@@ -20,10 +20,12 @@ def deps = [:]
 def versions = [:]
 versions.arch = hasProperty("ARCH_VERSION") ? getProperty("ARCH_VERSION") : "1.0.0"
 versions.support = "26.1.0"
+versions.firebase = "11.8.0"
+versions.firebase_jobdispatcher = "0.6.0"
 versions.multidex = "1.0.2"
 versions.constraint_layout = "1.0.2"
 versions.paging = "1.0.0-alpha4-1"
-versions.kotlin = "1.1.60"
+versions.kotlin = "1.2.31"
 versions.dagger = "2.13"
 versions.junit = "4.12"
 versions.espresso = "3.0.1"
@@ -36,24 +38,36 @@ versions.mockito_all = "1.10.19"
 versions.dexmaker = "2.2.0"
 versions.glide = "3.8.0"
 versions.timber = "4.5.1"
-versions.android_gradle_plugin = "3.0.1"
-versions.rxjava2 = "2.1.8"
-versions.rxandroid = "2.0.1"
+versions.rxjava2 = "2.1.9"
+versions.rxandroid2 = "2.0.2"
 versions.atsl_runner = "1.0.1"
 versions.atsl_rules = "1.0.1"
 versions.hamcrest = "1.3"
 versions.leakcanary = "1.5.4"
 versions.anko = "0.10.4"
+versions.easypermissions = "1.1.1"
+
 
 def support = [:]
 support.annotations = "com.android.support:support-annotations:$versions.support"
+support.v4 = "com.android.support:support-v4:$versions.support"
 support.app_compat = "com.android.support:appcompat-v7:$versions.support"
 support.recyclerview = "com.android.support:recyclerview-v7:$versions.support"
 support.cardview = "com.android.support:cardview-v7:$versions.support"
+support.preference = "com.android.support:preference-v7:$versions.support"
 support.design = "com.android.support:design:$versions.support"
-support.v4 = "com.android.support:support-v4:$versions.support"
 support.core_utils = "com.android.support:support-core-utils:$versions.support"
+support.vector_drawable = "com.android.support:support-vector-drawable:$versions.support"
 deps.support = support
+
+def firebase = [:]
+firebase.messaging = "com.google.firebase:firebase-messaging:$versions.firebase"
+firebase.auth = "com.google.firebase:firebase-auth:$versions.firebase"
+deps.firebase = firebase
+
+def play_services = [:]
+play_services.auth = "com.google.android.gms:play-services-auth:$versions.firebase"
+deps.play_services = play_services
 
 def room = [:]
 room.runtime = "android.arch.persistence.room:runtime:$versions.arch"
@@ -120,7 +134,9 @@ def anko = [:]
 anko.common = "org.jetbrains.anko:anko-commons:$versions.anko"
 deps.anko = anko
 
+
 deps.multidex = "com.android.support:multidex:$versions.multidex"
+deps.firebase_jobdispatcher = "com.firebase:firebase-jobdispatcher:$versions.firebase_jobdispatcher"
 deps.constraint_layout = "com.android.support.constraint:constraint-layout:$versions.constraint_layout"
 deps.paging = "android.arch.paging:runtime:$versions.paging"
 deps.glide = "com.github.bumptech.glide:glide:$versions.glide"
@@ -129,8 +145,8 @@ deps.timber = "com.jakewharton.timber:timber:$versions.timber"
 deps.junit = "junit:junit:$versions.junit"
 deps.mock_web_server = "com.squareup.okhttp3:mockwebserver:$versions.mockwebserver"
 deps.rxjava2 = "io.reactivex.rxjava2:rxjava:$versions.rxjava2"
-deps.rxandroid = "io.reactivex.rxjava2:rxandroid:$versions.rxandroid"
+deps.rxandroid2 = "io.reactivex.rxjava2:rxandroid:$versions.rxandroid2"
 deps.hamcrest = "org.hamcrest:hamcrest-all:$versions.hamcrest"
-deps.android_gradle_plugin = "com.android.tools.build:gradle:$versions.android_gradle_plugin"
+deps.easypermissions = "pub.devrel:easypermissions:$versions.easypermissions"
 
 ext.deps = deps

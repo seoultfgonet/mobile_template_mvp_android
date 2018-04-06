@@ -10,7 +10,7 @@ import me.contextof.template.app.home.HomeActivityView
  * Author Jun-hyoung, Lee
  */
 @PerActivity
-@Component(dependencies = arrayOf(AppComponent::class), modules = arrayOf(ActivityModule::class))
+@Component(dependencies = [(AppComponent::class)], modules = arrayOf(ActivityModule::class))
 interface HomeActivityComponent : ActivityComponent {
     fun inject(activity: HomeActivityView)
 }

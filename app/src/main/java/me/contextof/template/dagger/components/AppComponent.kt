@@ -12,16 +12,16 @@ import me.contextof.template.network.ApiFactory
 import okhttp3.OkHttpClient
 
 @Singleton
-@Component(modules = arrayOf(AppModule::class, NetworkModule::class))
+@Component(modules = [(AppModule::class), (NetworkModule::class)])
 interface AppComponent {
 
     fun inject(application: Application)
 
-    fun getApplication(): Application
+    fun application(): Application
 
-    fun getNavigator(): Navigator
+    fun navigator(): Navigator
 
-    fun getOkHttpClient(): OkHttpClient
+    fun okHttpClient(): OkHttpClient
 
-    fun getApiFactory(): ApiFactory
+    fun apiFactory(): ApiFactory
 }

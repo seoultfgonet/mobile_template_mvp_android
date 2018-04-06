@@ -30,7 +30,7 @@ class WelcomeActivityView : MvpActivityView<WelcomeView, BasePresenter<WelcomeVi
     private val handler = Handler()
     private val homeViewNavigator = Runnable {
         Log.v("HOME", "> going to home view")
-        appComponent.getNavigator().navigateToHomeActivityView(this@WelcomeActivityView)
+        appComponent.navigator().navigateToHomeActivityView(this@WelcomeActivityView)
         finish()
     }
 

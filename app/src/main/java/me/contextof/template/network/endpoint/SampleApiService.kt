@@ -8,7 +8,7 @@ import retrofit2.http.POST
  * Date 2018. 1. 10.
  * Author Jun-hyoung, Lee
  */
-interface MyAppSampleEndpoint {
+interface SampleApiService {
 
     @POST("users/new")
     fun signup(@Body any: Any): Observable<Any>
