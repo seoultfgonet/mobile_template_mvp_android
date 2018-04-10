@@ -35,7 +35,7 @@ def versions = [
         mockito: '2.7.19',
         mockito_all: '1.10.19',
         dexmaker: '2.2.0',
-        glide: '3.8.0',
+        glide: '4.6.1',
         timber: '4.5.1',
         rxjava2: '2.1.9',
         rxandroid2: '2.0.2',
@@ -147,12 +147,19 @@ def realm = [
 ]
 deps.realm = realm
 
+def glide = [
+        runtime: "com.github.bumptech.glide:glide:$versions.glide",
+        compiler: "com.github.bumptech.glide:compiler:$versions.glide",
+        annotations: "com.github.bumptech.glide:annotations:$versions.glide",
+        integration: "com.github.bumptech.glide:recyclerview-integration:$versions.glide",
+]
+deps.glide = glide
+
 
 deps.multidex = "com.android.support:multidex:$versions.multidex"
 deps.firebase_jobdispatcher = "com.firebase:firebase-jobdispatcher:$versions.firebase_jobdispatcher"
 deps.constraint_layout = "com.android.support.constraint:constraint-layout:$versions.constraint_layout"
 deps.paging = "android.arch.paging:runtime:$versions.paging"
-deps.glide = "com.github.bumptech.glide:glide:$versions.glide"
 deps.dexmaker = "com.linkedin.dexmaker:dexmaker-mockito:$versions.dexmaker"
 deps.timber = "com.jakewharton.timber:timber:$versions.timber"
 deps.junit = "junit:junit:$versions.junit"

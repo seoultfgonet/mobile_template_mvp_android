@@ -69,9 +69,19 @@ dependencies {
     implementation deps.constraint_layout
     implementation deps.timber
     implementation deps.dagger.runtime
+    implementation deps.multidex
+    implementation deps.anko.common
+    implementation deps.retrofit.runtime
+    implementation deps.retrofit.gson_converter
+    implementation deps.retrofit.rxjava2_adapter
+    implementation deps.rxjava2
+    implementation deps.rxandroid2
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    implementation 'pub.devrel:easypermissions:1.1.1'
+    implementation 'io.realm:android-adapters:2.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'pub.devrel:easypermissions:1.1.1'
+    debugImplementation deps.leakcanary.debug_compiler
+    releaseImplementation deps.leakcanary.release_compiler
     kapt deps.dagger.compiler
 
     testImplementation deps.junit
@@ -80,20 +90,9 @@ dependencies {
     testImplementation deps.arch_core.testing
     testImplementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
 
-    compile deps.multidex
-    compile deps.anko.common
-    compile deps.retrofit.runtime
-    compile deps.retrofit.gson_converter
-    compile deps.retrofit.rxjava2_adapter
-    compile deps.rxjava2
-    compile deps.rxandroid2
-    compile 'io.realm:android-adapters:2.1.1'
-    debugCompile deps.leakcanary.debug_compiler
-    releaseCompile deps.leakcanary.release_compiler
-
-    androidTestCompile deps.junit
-    androidTestCompile deps.atsl.runner
-    androidTestCompile deps.espresso.core
+    androidTestImplementation deps.junit
+    androidTestImplementation deps.atsl.runner
+    androidTestImplementation deps.espresso.core
 }
 
 //apply plugin: 'com.google.gms.google-services'
